@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - MyntReal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="about.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div class="container nav">
+
+    <!-- LOGO IMAGE -->
+    <div class="logo">
+      <img src="Assets/myntreal-logo.png" alt="MyntReal Logo">
+    </div>
+
+    <!-- NAV -->
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="verticals.html">Verticals</a>
+      <a href="https://myntreal.com/contact">Contact</a>
+    </nav>
+
+    <!-- MOBILE MENU ICON -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+<div class="hero-particles"></div>
+
+<div class="container center hero-content reveal">
+
+<h1>About MyntReal</h1>
+
+<p>
+A structured multi-vertical franchise ecosystem designed
+to create scalable, diversified and future-ready businesses.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- WHO WE ARE -->
+
+<section class="section">
+
+<div class="container two-col">
+
+<div class="reveal">
+
+<h2>Who We Are</h2>
+
+<p>
+MyntReal is a unified business platform integrating five
+high-demand industries under one operational model.
+</p>
+
+<p>
+Our ecosystem empowers entrepreneurs to operate Electric Vehicles,
+Solar Energy, Insurance, Real Estate and Professional Training
+services from a single structured franchise system.
+</p>
+
+</div>
+
+<div class="image-box parallax reveal"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- VISION MISSION -->
+
+<section class="section alt-bg">
+
+<div class="container two-col">
+
+<div class="card reveal stagger">
+
+<i class="fa-solid fa-eye card-icon"></i>
+
+<h3>Our Vision</h3>
+
+<p>
+To build a nationwide multi-industry business network enabling
+entrepreneurs to operate sustainable and scalable enterprises.
+</p>
+
+</div>
+
+
+<div class="card reveal stagger">
+
+<i class="fa-solid fa-bullseye card-icon"></i>
+
+<h3>Our Mission</h3>
+
+<p>
+To provide structured systems, operational guidance,
+marketing support and industry access across
+future-focused sectors.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- BUSINESS MODEL -->
+
+<section class="section">
+
+<div class="container center">
+
+<h2 class="reveal">Our Business Model</h2>
+
+<p class="subtitle reveal">
+One franchise. Five verticals. Multiple revenue channels.
+</p>
+
+
+<div class="model-grid">
+
+<div class="model-card reveal stagger">
+<i class="fa-solid fa-car-battery"></i>
+Electric Vehicle Distribution
+</div>
+
+<div class="model-card reveal stagger">
+<i class="fa-solid fa-solar-panel"></i>
+Solar Installations
+</div>
+
+<div class="model-card reveal stagger">
+<i class="fa-solid fa-shield-heart"></i>
+Insurance Facilitation
+</div>
+
+<div class="model-card reveal stagger">
+<i class="fa-solid fa-building"></i>
+Real Estate Services
+</div>
+
+<div class="model-card reveal stagger">
+<i class="fa-solid fa-graduation-cap"></i>
+Training & Certification
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CORE VALUES -->
+
+<section class="section alt-bg">
+
+<div class="container center">
+
+<h2 class="reveal">Our Core Values</h2>
+
+<div class="values-grid">
+
+<div class="value-card reveal stagger">
+<i class="fa-solid fa-scale-balanced"></i>
+<h4>Integrity</h4>
+<p>Transparent and ethical operations.</p>
+</div>
+
+<div class="value-card reveal stagger">
+<i class="fa-solid fa-chart-line"></i>
+<h4>Scalability</h4>
+<p>Systems built for long-term growth.</p>
+</div>
+
+<div class="value-card reveal stagger">
+<i class="fa-solid fa-lightbulb"></i>
+<h4>Innovation</h4>
+<p>Future-oriented industry positioning.</p>
+</div>
+
+<div class="value-card reveal stagger">
+<i class="fa-solid fa-handshake"></i>
+<h4>Support</h4>
+<p>Continuous partner enablement and guidance.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container center reveal">
+
+<h2>Join the MyntReal Ecosystem</h2>
+
+<p>
+Become part of a diversified and structured franchise network.
+</p>
+
+<button class="btn">Start Your Journey</button>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("active");
+}
+
+/* SCROLL REVEAL */
+
+const reveals=document.querySelectorAll('.reveal');
+
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.15});
+
+reveals.forEach(el=>observer.observe(el));
+
+
+/* PARALLAX IMAGE */
+
+window.addEventListener('scroll',()=>{
+
+const parallax=document.querySelector('.parallax');
+
+if(parallax){
+
+let offset=window.pageYOffset;
+
+parallax.style.transform=`translateY(${offset*0.06}px)`;
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

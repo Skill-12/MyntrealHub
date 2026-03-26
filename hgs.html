@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Har Ghar Solar</title>
+
+<link rel="stylesheet" href="hgs.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="Assets/hgs.png" alt="MyntReal Logo">
+    </div>
+
+    <!-- NAV -->
+    <nav id="nav">
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-btn">Verticals ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="manthra.html"><span>⚡</span> Manthra EV</a>
+          <a href="hgs.html"><span>☀️</span> Har Ghar Solar</a>
+          <a href="etc.html"><span>🎓</span> EVolution Training</a>
+          <a href="realestate.html"><span>🏠</span> VGK Real Dreams</a>
+          <a href="care.html"><span>🛡️</span> VGK Care</a>
+        </div>
+      </div>
+
+      <a href="https://myntreal.com/contact">Contact</a>
+
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  </div>
+</header>
+
+
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content reveal">
+
+<h1>Solar Power For Every Home</h1>
+
+<p>Reduce electricity bills and generate clean renewable power with rooftop solar systems.</p>
+
+<button class="btn-primary">Apply For Solar</button>
+
+</div>
+
+</section>
+
+
+
+<section class="section stats reveal">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h2 class="counter" data-target="25">0</h2>
+<p>Years System Life</p>
+</div>
+
+<div class="stat-card">
+<h2 class="counter" data-target="78">0</h2>
+<p>Subsidy ₹ Thousands</p>
+</div>
+
+<div class="stat-card">
+<h2 class="counter" data-target="60">0</h2>
+<p>% Electricity Savings</p>
+</div>
+
+<div class="stat-card">
+<h2 class="counter" data-target="5">0</h2>
+<p>Years Payback</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section surya reveal">
+
+<div class="container surya-grid">
+
+<div class="surya-text">
+
+<h2>PM Surya Ghar Yojana</h2>
+
+<div class="divider"></div>
+
+<p>
+Government initiative promoting rooftop solar adoption across India.
+</p>
+
+<ul>
+
+<li>Subsidy support up to ₹78,000</li>
+<li>5–6 year payback period</li>
+<li>25 year solar system life</li>
+<li>Lower electricity bills</li>
+
+</ul>
+
+<button class="btn-primary">Apply For Solar</button>
+
+</div>
+
+
+<div class="surya-card">
+
+<img src="Assets/Solar-PM.webp">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section savings reveal">
+
+<div class="container">
+
+<h2 class="center">Electricity Bill Comparison</h2>
+
+<div class="divider center-divider"></div>
+
+<div class="savings-grid">
+
+<div class="savings-card before">
+
+<h3>Without Solar</h3>
+
+<p class="bill">₹3000 / month</p>
+
+<p>Electricity bill increases every year.</p>
+
+</div>
+
+<div class="savings-card after">
+
+<h3>With Solar</h3>
+
+<p class="bill">₹300 / month</p>
+
+<p>Generate your own electricity.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section process reveal">
+
+<div class="container">
+
+<h2 class="center">Solar Installation Process</h2>
+
+<div class="divider center-divider"></div>
+
+<div class="process-grid">
+
+<div class="process-card">
+<span>1</span>
+<h3>Site Inspection</h3>
+<p>Analyze rooftop and electricity usage.</p>
+</div>
+
+<div class="process-card">
+<span>2</span>
+<h3>System Design</h3>
+<p>Custom solar system design.</p>
+</div>
+
+<div class="process-card">
+<span>3</span>
+<h3>Installation</h3>
+<p>Professional solar installation.</p>
+</div>
+
+<div class="process-card">
+<span>4</span>
+<h3>Start Saving</h3>
+<p>Generate electricity from sunlight.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section tools reveal">
+
+<div class="container">
+
+<h2 class="center">Solar Tools</h2>
+
+<div class="divider center-divider"></div>
+
+<div class="tools-grid">
+
+
+<div class="tool-card">
+
+<h3>Subsidy Calculator</h3>
+
+<input type="number" id="bill" placeholder="Monthly Electricity Bill ₹">
+
+<button onclick="calculateSubsidy()" class="btn-primary">Check Eligibility</button>
+
+<div id="subsidy-result"></div>
+
+</div>
+
+
+<div class="tool-card">
+
+<h3>ROI Calculator</h3>
+
+<input type="number" id="roi-bill" placeholder="Monthly Electricity Bill ₹">
+
+<button onclick="calculateROI()" class="btn-primary">Calculate Savings</button>
+
+<div id="roi-result"></div>
+
+</div>
+
+
+
+<div class="tool-card faq-card">
+
+<h3>Solar FAQ</h3>
+
+<div class="faq-item">
+
+<button class="faq-question">
+What subsidy is available?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Government subsidy up to ₹78,000 depending on system size.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+What is the payback period?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Solar systems usually recover cost within 5–6 years.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+How long do solar panels last?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Solar panels last more than 25 years.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section testimonials reveal">
+
+<div class="container">
+
+<h2 class="center">Customer Testimonials</h2>
+
+<div class="divider center-divider"></div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<p>"My electricity bill dropped by 70% after installing solar."</p>
+<h4>Ravi Kumar</h4>
+</div>
+
+<div class="testimonial-card">
+<p>"The installation was fast and the subsidy process was smooth."</p>
+<h4>Sneha Reddy</h4>
+</div>
+
+<div class="testimonial-card">
+<p>"Highly professional solar team. Excellent support."</p>
+<h4>Arjun Mehta</h4>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section contact reveal">
+
+<div class="container">
+
+<h2 class="center">Get Free Solar Consultation</h2>
+
+<div class="divider center-divider"></div>
+
+<div class="contact-card">
+
+<form class="contact-form">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<textarea placeholder="Your Message"></textarea>
+
+<button class="btn-primary">Request Consultation</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div class="container footer-grid">
+
+<div class="footer-brand">
+
+<img src="Assets/hgs.png" style="overlay: auto;": white;">
+
+<p>Clean renewable solar energy solutions for homes across India.</p>
+
+</div>
+
+
+<div>
+
+<h4>Quick Links</h4>
+
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Solar Tools</a>
+
+</div>
+
+
+<div>
+
+<h4>Services</h4>
+
+<a href="#">Rooftop Solar</a>
+<a href="#">Solar Consultation</a>
+<a href="#">Subsidy Assistance</a>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
+
+<p>Saripalli, Opp Petro Bunk <br> Pendurthi - 531173</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 Har Ghar Solar</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+
+/* mobile menu */
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("active");
+}
+
+/* dropdown for mobile */
+document.querySelectorAll(".drop-btn").forEach(btn=>{
+btn.addEventListener("click", function(e){
+if(window.innerWidth < 768){
+e.preventDefault();
+this.parentElement.classList.toggle("active");
+}
+});
+});
+
+
+const reveals=document.querySelectorAll(".reveal")
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(el=>{
+
+const top=el.getBoundingClientRect().top
+
+if(top<window.innerHeight-120){
+el.classList.add("active")
+}
+
+})
+
+})
+
+
+document.querySelectorAll(".faq-question").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+btn.nextElementSibling.classList.toggle("show")
+
+})
+
+})
+
+
+function calculateSubsidy(){
+
+let bill=document.getElementById("bill").value
+
+let result=document.getElementById("subsidy-result")
+
+if(bill>1500){
+
+result.innerHTML="Recommended 3–5kW system. Subsidy up to ₹78,000"
+
+}else{
+
+result.innerHTML="Recommended 1–2kW system"
+
+}
+
+}
+
+
+function calculateROI(){
+
+let bill=document.getElementById("roi-bill").value
+
+let yearly=bill*12
+
+let lifetime=yearly*25
+
+document.getElementById("roi-result").innerHTML=
+"Yearly savings ₹"+yearly+"<br>25 year savings ₹"+lifetime
+
+}
+
+
+const counters=document.querySelectorAll(".counter")
+
+counters.forEach(counter=>{
+
+counter.innerText='0'
+
+const update=()=>{
+
+const target=+counter.getAttribute("data-target")
+
+const c=+counter.innerText
+
+const increment=target/100
+
+if(c<target){
+
+counter.innerText=`${Math.ceil(c+increment)}`
+
+setTimeout(update,20)
+
+}
+
+else{
+
+counter.innerText=target
+
+}
+
+}
+
+update()
+
+})
+</script>
+
+</body>
+</html>

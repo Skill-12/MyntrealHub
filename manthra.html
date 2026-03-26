@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manthra EV | MyntReal</title>
+<link rel="stylesheet" href="manthra.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<header class="header">
+  <div class="container nav">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="Assets/Manthra.png" alt="MyntReal Logo">
+    </div>
+
+    <!-- NAV -->
+    <nav id="nav">
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-btn">Verticals ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="manthra.html"><span>⚡</span> Manthra EV</a>
+          <a href="hgs.html"><span>☀️</span> Har Ghar Solar</a>
+          <a href="etc.html"><span>🎓</span> EVolution Training</a>
+          <a href="realestate.css"><span>🏠</span> VGK Real Dreams</a>
+          <a href="care.html"><span>🛡️</span> VGK Care</a>
+        </div>
+      </div>
+
+      <a href="https://myntreal.com/contact">Contact</a>
+
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-inner">
+    <h1>Redefining Urban Mobility</h1>
+    <p>Next-generation electric two-wheelers engineered for performance and sustainability.</p>
+    <div class="btn-group">
+      <button class="btn-primary">Explore Models</button>
+      <button class="btn-outline">Become Dealer</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="feature-strip">
+  <div class="container strip-grid">
+    <div><strong>120KM</strong><span>Range</span></div>
+    <div><strong>Fast</strong><span>Charging</span></div>
+    <div><strong>Lithium</strong><span>Battery</span></div>
+    <div><strong>Low</strong><span>Maintenance</span></div>
+  </div>
+</section>
+
+
+<section class="section models">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Our Models</h2>
+      <p>Designed for performance and real-world usage.</p>
+    </div>
+
+    <div class="model-grid">
+
+      <div class="model-card" data-model="gt">
+        <img src="Assets/4-Photoroom.png">
+        <div class="model-info">
+          <h3>GT Pro</h3>
+          <p>High-performance electric scooter.</p>
+          <button class="btn-spec">View Specs</button>
+        </div>
+      </div>
+
+      <div class="model-card" data-model="power">
+        <img src="Assets/5-Photoroom.png">
+        <div class="model-info">
+          <h3>Power Plus</h3>
+          <p>Long-range powerful EV.</p>
+          <button class="btn-spec">View Specs</button>
+        </div>
+      </div>
+
+      <div class="model-card" data-model="sweety">
+        <img src="Assets/6-Photoroom.png">
+        <div class="model-info">
+          <h3>Sweety Pro</h3>
+          <p>Compact daily commuter.</p>
+          <button class="btn-spec">View Specs</button>
+        </div>
+      </div>
+
+      <div class="model-card" data-model="m99">
+        <img src="Assets/M99.png">
+        <div class="model-info">
+          <h3>M99</h3>
+          <p>Commercial EV for logistics.</p>
+          <button class="btn-spec">View Specs</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="specModal" class="modal">
+  <div class="modal-content">
+
+    <span id="closeModal">&times;</span>
+
+    <div class="modal-body">
+      <div class="modal-left">
+        <img id="modalImg">
+      </div>
+
+      <div class="modal-right">
+        <h2 id="modalTitle"></h2>
+        <div id="modalSpecs" class="specs"></div>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const data = {
+    gt:{
+      title:"GT Pro",
+      img:"Assets/4-Photoroom.png",
+      specs:["Range:120km","Top Speed:75km/h","Battery:2.5kWh","Charging:4h"],
+      desc:"High performance EV for city riding."
+    },
+    power:{
+      title:"Power Plus",
+      img:"Assets/5-Photoroom.png",
+      specs:["Range:140km","Top Speed:80km/h","Battery:3kWh","Charging:5h"],
+      desc:"Built for power and long rides."
+    },
+    sweety:{
+      title:"Sweety Pro",
+      img:"Assets/6-Photoroom.png",
+      specs:["Range:90km","Top Speed:60km/h","Battery:2kWh","Charging:3h"],
+      desc:"Compact and stylish daily commuter."
+    },
+    m99:{
+      title:"M99",
+      img:"Assets/M99.png",
+      specs:["Range:110km","Top Speed:65km/h","Battery:2.8kWh","Charging:4h"],
+      desc:"Commercial EV for delivery use."
+    }
+  };
+
+  const modal = document.getElementById("specModal");
+  const closeBtn = document.getElementById("closeModal");
+
+  document.querySelectorAll(".btn-spec").forEach(btn=>{
+    btn.addEventListener("click", function(){
+
+      const key = this.closest(".model-card").dataset.model;
+      const m = data[key];
+
+      document.getElementById("modalTitle").innerText = m.title;
+      document.getElementById("modalImg").src = m.img;
+
+      let html="";
+      m.specs.forEach(s=> html += `<div>${s}</div>`);
+      document.getElementById("modalSpecs").innerHTML = html;
+
+      document.getElementById("modalDesc").innerText = m.desc;
+
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    });
+  });
+
+  closeBtn.addEventListener("click", function(){
+    modal.style.display="none";
+    document.body.style.overflow="auto";
+  });
+
+  window.addEventListener("click", function(e){
+    if(e.target === modal){
+      modal.style.display="none";
+      document.body.style.overflow="auto";
+    }
+  });
+
+});
+</script>
+
+
+
+<section class="dealer-cta">
+  <div class="container center">
+    <h2>Become a Mantra EV Dealer</h2>
+    <p>Join the electric revolution and grow with MyntReal.</p>
+    <button class="btn-primary" style="margin-top: 3%;">Apply Now</button>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>MyntReal</h3>
+      <p>India’s Multi-Business Franchise Ecosystem.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Verticals</a>
+      <a href="https://myntreal.com/contact">Contact</a>
+    </div>
+    <div>
+      <h4>Verticals</h4>
+      <a href="manthra.html">Mantra EV</a>
+      <a href="hgs.html">Solar</a>
+      <a href="etc.html">Training</a>
+      <a href="care.html">Insurance</a>
+      <a href="realestate.html">Real Estate</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Saripalli, Pendurthi</p>
+      <p>Visakhapatnam - 531173</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 MyntReal. All Rights Reserved.
+  </div>
+</footer>
+
+
+
+
+<script>
+
+/* Hero reveal */
+window.addEventListener("load",()=>{
+document.querySelector(".hero").classList.add("active");
+});
+
+/* Header */
+window.addEventListener("scroll",()=>{
+document.getElementById("header")
+.classList.toggle("scrolled",window.scrollY>60);
+});
+
+/* Section reveal */
+const sections=document.querySelectorAll(".section,.feature-strip,.dealer-cta");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.25});
+sections.forEach(sec=>observer.observe(sec));
+
+/* 3D Tilt */
+document.querySelectorAll(".tilt-wrap").forEach(wrapper=>{
+if(window.matchMedia("(hover:none)").matches) return;
+const img=wrapper.querySelector("img");
+let x=0,y=0,tx=0,ty=0;
+const strength=18;
+function animate(){
+x+=(tx-x)*0.08;
+y+=(ty-y)*0.08;
+img.style.transform=`rotateX(${y}deg) rotateY(${x}deg) scale(1.06)`;
+requestAnimationFrame(animate);
+}
+animate();
+wrapper.addEventListener("mousemove",(e)=>{
+const rect=wrapper.getBoundingClientRect();
+tx=(e.clientX-rect.left-rect.width/2)/strength;
+ty=-(e.clientY-rect.top-rect.height/2)/strength;
+});
+wrapper.addEventListener("mouseleave",()=>{tx=0;ty=0;});
+});
+
+
+/* Modal */
+
+
+
+
+</script>
+
+</body>
+</html>

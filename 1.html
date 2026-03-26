@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MyntReal | Verticals</title>
+
+<link rel="stylesheet" href="verticals.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="header">
+  <div class="container nav">
+    <div class="logo">MyntReal</div>
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Verticals</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- EV -->
+<section class="section hero ev">
+
+<div class="overlay dark"></div>
+
+<div class="content reveal" style="display:flex; align-items:center; justify-content:space-between; flex-direction:column;">
+
+<h1>Manthra EV</h1>
+
+<p>Experience the future of sustainable mobility with cutting-edge electric vehicles.</p>
+
+<div class="btn-group">
+<button class="btn primary">Explore Vehicles</button>
+<button class="btn ghost">Get in Touch</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- SOLAR -->
+<section class="section hero solar">
+
+<div class="overlay dark"></div>
+
+<div class="content reveal">
+
+<h1>Har Ghar Solar</h1>
+
+<p>Bringing solar energy to every home with advanced sustainable solutions.</p>
+
+<div class="glass-grid">
+
+<div class="glass-card reveal stagger">
+<h3>Residential Solar</h3>
+<p>Reduce electricity bills with rooftop solar solutions.</p>
+</div>
+
+<div class="glass-card reveal stagger">
+<h3>Commercial Solar</h3>
+<p>Cost-efficient renewable systems for enterprises.</p>
+</div>
+
+<div class="glass-card reveal stagger">
+<h3>Energy Consulting</h3>
+<p>Strategic green energy transition support.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- INSURANCE -->
+<section class="section hero insurance">
+
+<div class="overlay light"></div>
+
+<div class="content dark reveal">
+
+<h1>Insurance Solutions</h1>
+
+<p>Protect what matters most with comprehensive coverage plans.</p>
+
+<div class="accordion">
+
+<div class="acc-item">
+<div class="acc-header">
+Comprehensive Coverage Plans
+<span class="arrow">▼</span>
+</div>
+<div class="acc-body">
+Customized insurance packages for individuals and businesses.
+</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-header">
+Quick Claims Processing
+<span class="arrow">▼</span>
+</div>
+<div class="acc-body">
+Fast and transparent claim settlements.
+</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-header">
+24/7 Customer Support
+<span class="arrow">▼</span>
+</div>
+<div class="acc-body">
+Round-the-clock assistance and advisory.
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- REAL ESTATE -->
+<section class="section hero realestate">
+
+<div class="overlay dark"></div>
+
+<div class="real-wrapper">
+
+<div class="real-text reveal">
+
+<h1>Real Estate Excellence</h1>
+
+<p>Delivering trust, transparency and long-term value in property investments.</p>
+
+<div class="real-grid">
+
+<div class="real-card reveal stagger">
+<h3>Residential</h3>
+<button class="btn outline">Learn More</button>
+</div>
+
+<div class="real-card reveal stagger">
+<h3>Commercial</h3>
+<button class="btn outline">Learn More</button>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="real-image reveal">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRAINING -->
+<section class="section hero training">
+
+<div class="overlay dark"></div>
+
+<div class="training-grid">
+
+<div class="training-left reveal">
+<h1>EV Training Programs</h1>
+<p>Advance your career with comprehensive electric vehicle training courses.</p>
+</div>
+
+<div class="training-form reveal stagger">
+
+<h3>Sign Up for EV Training</h3>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Select Experience Level</option>
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+</select>
+
+<button class="btn primary">Register Now</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+© 2026 MyntReal. All Rights Reserved.
+</footer>
+
+
+<script>
+
+/* reveal animation */
+
+const observer1 = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active")
+}
+})
+},{threshold:.2})
+
+document.querySelectorAll(".reveal")
+.forEach(el=>observer1.observe(el))
+
+
+/* accordion */
+
+document.querySelectorAll(".acc-header").forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+const parent = item.parentElement
+
+parent.classList.toggle("open")
+
+})
+
+})
+
+</script>
+
+
+
+
+
+<script>
+
+const reveals=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+});
+
+},{threshold:.2});
+
+reveals.forEach(el=>observer.observe(el));
+
+</script>
+
+<style>
+
+    :root{
+--accent:#34d399;
+--dark:#0f172a;
+--ease:cubic-bezier(.34,1.56,.64,1);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#000;
+color:#fff;
+}
+
+
+/* HEADER */
+
+header{
+position:fixed;
+width:100%;
+padding:18px 0;
+z-index:1000;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(10px);
+}
+
+.container{
+width:88%;
+max-width:1200px;
+margin:auto;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:700;
+font-size:20px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#fff;
+font-weight:500;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:var(--accent);
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+
+/* SECTION */
+
+.section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+padding:110px 4%;
+background-size:cover;
+background-position:center;
+}
+
+
+/* BACKGROUNDS */
+
+.ev{
+background:url("assets/Manthraev.jpg") center/cover;
+}
+
+.solar{
+background:url("assets/residential-solar-panels-rooftop-systems-dbjabwohukwit4za.jpg") center/cover;
+}
+
+.insurance{
+background:url("assets/insurance-concept-protection-against-a-possible-eventuality-hand-holding-umbrella-icon-for-security-symbol-and-house-car-health-care-and-travel-icon-on-wooden-circle-for-assurance-life-concept-photo.jpg") center/cover;
+}
+
+.realestate{
+background:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1700&q=80") center/cover;
+}
+
+.training{
+background:url("https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1700&q=80") center/cover;
+}
+
+
+/* OVERLAY */
+
+.overlay{
+position:absolute;
+inset:0;
+}
+
+.overlay.dark{
+background:linear-gradient(to bottom,rgba(0, 0, 0, 0.189),rgba(0,0,0,.8));
+}
+
+.overlay.light{
+background:rgba(255, 255, 255, 0.43);
+}
+
+
+/* CONTENT */
+
+.content{
+position:relative;
+width:100%;
+max-width:1400px;
+margin:0 auto;
+}
+
+.content.dark{
+color:#000;
+}
+
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:54px;
+margin-bottom:18px;
+}
+
+p{
+font-size:19px;
+margin-bottom:40px;
+max-width:1000px;
+line-height:1.7;
+}
+
+
+/* BUTTONS */
+
+.btn{
+padding:12px 32px;
+border-radius:8px;
+cursor:pointer;
+border:none;
+font-weight:600;
+transition:.35s var(--ease);
+}
+
+.primary{
+background:var(--accent);
+color:#000;
+}
+
+.primary:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(52,211,153,.5);
+}
+
+.ghost{
+background:rgba(255,255,255,.25);
+border:1px solid #fff;
+color:#fff;
+}
+
+.ghost:hover{
+background:#fff;
+color:#000;
+}
+
+.outline{
+background:#f59e0b;
+color:#000;
+}
+
+
+/* GLASS CARDS */
+
+.glass-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+width:100%;
+}
+
+.glass-card{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(18px);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.25);
+transition:.35s;
+}
+
+.glass-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+
+/* ACCORDION */
+
+.accordion{
+max-width:1000px;
+width:100%;
+}
+
+.acc-item{
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(14px);
+border-radius:14px;
+margin-bottom:12px;
+overflow:hidden;
+}
+
+.acc-header{
+padding:18px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.arrow{
+transition:.35s;
+}
+
+.acc-item.open .arrow{
+transform:rotate(180deg);
+}
+
+.acc-body{
+max-height:0;
+overflow:hidden;
+padding:0 18px;
+transition:max-height .4s ease;
+}
+
+.acc-item.open .acc-body{
+max-height:200px;
+padding:18px;
+}
+
+
+/* REAL ESTATE */
+
+.real-wrapper{
+position:relative;
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:100%;
+}
+
+.real-text{
+max-width:55%;
+}
+
+.real-image{
+position:absolute;
+right:0;
+top:0;
+width:38%;
+}
+
+.real-image img{
+width:100%;
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,.6);
+}
+
+.real-grid{
+display:flex;
+gap:25px;
+margin-top:25px;
+}
+
+.real-card{
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:18px;
+transition:.35s;
+}
+
+.real-card:hover{
+transform:translateY(-6px);
+box-shadow:0 25px 45px rgba(0,0,0,.5);
+}
+
+
+/* TRAINING */
+
+.training-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+}
+
+.training-form{
+background:#fff;
+color:#000;
+padding:45px;
+border-radius:20px;
+display:flex;
+flex-direction:column;
+gap:20px;
+box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+
+.training-form input,
+.training-form select{
+padding:14px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+padding:30px;
+text-align:center;
+}
+
+
+/* REVEAL */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+
+</body>
+</html>
