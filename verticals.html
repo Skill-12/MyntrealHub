@@ -17,18 +17,33 @@
 
     <!-- LOGO -->
     <div class="logo">
-      <img src="Assets/myntreal-logo.png" alt="MyntReal Logo">
+      <img src="Assets/Mynt White.png" alt="MyntReal Logo">
     </div>
 
     <!-- NAV -->
     <nav id="nav">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Verticals</a>
-      <a href="#">Contact</a>
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-btn">Verticals ▾</a>
+
+        <div class="dropdown-menu">
+          <a href="manthra.html"><span>⚡</span> Manthra EV</a>
+          <a href="hgs.html"><span>☀️</span> Har Ghar Solar</a>
+          <a href="etc.html"><span>🎓</span> EVolution Training</a>
+          <a href="realestate.css"><span>🏠</span> VGK Real Dreams</a>
+          <a href="care.html"><span>🛡️</span> VGK Care</a>
+        </div>
+      </div>
+
+      <a href="https://myntreal.com/contact">Contact</a>
+
     </nav>
 
-    <!-- MENU BUTTON -->
+    <!-- MOBILE MENU -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
   </div>
@@ -42,9 +57,9 @@
     <p>Experience the future of sustainable mobility with cutting-edge electric vehicles.</p>
 
     <div class="btn-group">
-      <button class="btn primary">Explore Vehicles</button>
-      <button class="btn ghost">Get in Touch</button>
-      <button class="btn ghost">More Details</button>
+      <a href="manthra.html"><button class="btn primary">Explore Vehicles</button></a>
+      <a href="https://myntreal.com/contact"><button class="btn ghost">Get in Touch</button></a>
+      <a href="manthra.html"><button class="btn ghost">More Details</button></a>
     </div>
 
   </div>
@@ -79,7 +94,7 @@
     </div>
 
     <div style="margin-top:40px">
-      <button class="btn primary">More Details</button>
+      <a href="hgs.html"><button class="btn primary">More Details</button></a>
     </div>
 
   </div>
@@ -115,7 +130,7 @@
     </div>
 
     <div style="margin-top:30px">
-      <button class="btn primary">More Details</button>
+      <a href="care.html"><button class="btn primary">More Details</button></a>
     </div>
 
   </div>
@@ -145,7 +160,7 @@
         </div>
       </div>
 
-      <button class="btn primary" style="margin-top:30px;">More Details</button>
+      <a href="realestate.html"><button class="btn primary" style="margin-top:30px;">More Details</button></a>
 
     </div>
 
@@ -183,7 +198,7 @@
       </select>
 
       <button class="btn primary">Register Now</button>
-      <button class="btn ghost">More Details</button>
+      <a href="etc.html"><button class="btn ghost">More Details</button></a>
     </div>
 
   </div>
@@ -223,7 +238,7 @@
         <option>Real Estate</option>
       </select>
 
-      <button class="btn primary">Submit Request</button>
+      <a href="https://myntreal.com/contact"><button class="btn primary">Submit Request</button></a>
     </div>
 
   </div>
@@ -274,6 +289,10 @@
 
 
 <script>
+  window.addEventListener("scroll",()=>{
+document.getElementById("header")
+.classList.toggle("scrolled",window.scrollY>60);
+});
 
 
 function toggleMenu(){

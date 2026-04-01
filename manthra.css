@@ -511,6 +511,7 @@ margin-bottom:8px;
 
 /* MODAL LAYOUT */
 .modal-body{
+  background: rgb(224, 253, 224);
   display:flex;
   gap:40px;
   align-items:center;
@@ -535,10 +536,11 @@ margin-bottom:8px;
   grid-template-columns:repeat(2,1fr);
   gap:10px;
   margin-bottom:20px;
+  padding: 10px;
 }
 
 .specs div{
-  background:#f1f5f9;
+  background:#a4eded;
   padding:10px;
   border-radius:8px;
   font-size:14px;
