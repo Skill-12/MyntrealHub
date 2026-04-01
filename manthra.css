@@ -175,7 +175,7 @@ cursor:pointer;
 /* MENU */
 .dropdown-menu{
 position:absolute;
-top:45px;
+top:30px;
 left:0;
 background:white;
 border-radius:10px;

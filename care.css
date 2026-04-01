@@ -42,7 +42,7 @@ h4{font-size:18px;font-weight:600}
 .header{
 position:fixed;
 width:100%;
-padding:16px 0;
+padding:10px 0;
 background:rgb(255, 255, 255);
 box-shadow:0 5px 20px rgba(0,0,0,.05);
 z-index:1000;
@@ -59,7 +59,7 @@ position:relative;
 
 /* LOGO IMAGE */
 .logo img{
-height:42px;
+height:55px;
 width:auto;
 display:block;
 }
@@ -171,7 +171,7 @@ cursor:pointer;
 /* MENU */
 .dropdown-menu{
 position:absolute;
-top:45px;
+top:30px;
 left:0;
 background:white;
 border-radius:10px;
