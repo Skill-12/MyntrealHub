@@ -78,6 +78,60 @@ to create scalable, diversified and future-ready businesses.
 </section>
 
 
+<section class="iso-section">
+
+<div class="iso-container">
+
+<div class="iso-text">
+<h2>Certified for Quality & Trust</h2>
+
+<p>
+MyntReal is an ISO 9001:2015 Certified organization, ensuring structured processes, consistent service quality, and standardized operations across all business verticals.
+</p>
+
+<div class="iso-points">
+<div>✔ Quality Management System Certified</div>
+<div>✔ Standardized Multi-Business Operations</div>
+<div>✔ Trusted Franchise & Service Network</div>
+</div>
+
+<button class="iso-btn" id="openIso">View Certificate</button>
+
+<div class="iso-trust">
+<div class="iso-meta"><span>Certificate No:</span> E20260346985 </div>
+
+<div class="iso-badges">
+<div class="badge">✔ Verified Certification</div>
+<div class="badge">✔ Globally Recognized Standard</div>
+</div>
+</div>
+
+</div>
+
+<div class="iso-visual">
+<div class="iso-card" id="openIsoCard">
+<img src="Assets/MYNT ISO.jpeg" alt="ISO Certificate">
+<div class="iso-shine"></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== MODAL ===== -->
+
+<div class="iso-modal" id="isoModal">
+<span class="iso-close" id="closeIso">&times;</span>
+
+<div class="iso-modal-content">
+<img src="Assets/MYNTREAL ISO.jpg" alt="ISO Certificate">
+<p class="iso-caption">ISO 9001:2015 Certified – Quality Management System</p>
+</div>
+</div>
+
+
+
 
 <!-- WHO WE ARE -->
 
@@ -313,6 +367,25 @@ parallax.style.transform=`translateY(${offset*0.06}px)`;
 }
 
 });
+
+
+const openBtn = document.getElementById("openIso");
+const openCard = document.getElementById("openIsoCard");
+const modal = document.getElementById("isoModal");
+const closeBtn = document.getElementById("closeIso");
+
+openBtn.onclick = () => modal.classList.add("active");
+openCard.onclick = () => modal.classList.add("active");
+
+closeBtn.onclick = () => modal.classList.remove("active");
+
+modal.onclick = (e) => {
+if(e.target === modal){
+modal.classList.remove("active");
+}
+};
+
+
 
 </script>
 
